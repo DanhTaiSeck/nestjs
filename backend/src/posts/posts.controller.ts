@@ -10,6 +10,11 @@ export class PostsController {
     return this.postsService.findAll();
   }
 
+  @Get('search/:keyword')
+  search(@Param('keyword') keyword: string) {
+    return this.postsService.search(keyword);
+  }
+
   @Get(':id')
   getOne(@Param('id') id: number) {
     return this.postsService.findOne(id);

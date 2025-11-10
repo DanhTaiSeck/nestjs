@@ -1,9 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, Like } from 'typeorm';
 import { Post } from '../entities/post.entity';
-import { User } from '../entities/user.entity';
-import { Topic } from '../entities/topic.entity';
 
 @Injectable()
 export class PostsService {
@@ -20,6 +18,16 @@ export class PostsService {
     return this.postRepo.findOne({
       where: { post_id: id },
       relations: ['user', 'topic', 'comments', 'likes'],
+    });
+  }
+
+  async search(keyword: string) {
+    return this.postRepo.find({
+      where: [
+        { content: Like(`%${keyword}%`) },
+      ],
+      relations: ['user', 'topic', 'comments', 'likes'],
+      order: { created_at: 'DESC' },
     });
   }
 
