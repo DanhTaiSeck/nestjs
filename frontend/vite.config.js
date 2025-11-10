@@ -8,9 +8,9 @@ export default defineConfig({
 	plugins: [
     react(),
     compression({
-      algorithm: 'gzip',       // nén gzip
-      ext: '.gz',              // file nén sẽ có đuôi .gz
-      deleteOriginFile: false, // giữ file gốc không nén
+      algorithm: 'gzip',  
+      ext: '.gz', 
+      deleteOriginFile: false,
     })
   ],
   server: {

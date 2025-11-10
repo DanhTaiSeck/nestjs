@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react';
-
 export const MainPage: React.FC = () => {
 	return (
-		<div className='main'>
-			web vip
+		<div className='main text-red-500'>
+			web vip, mẫu template để tạo trang
 		</div>
 	);
 };
