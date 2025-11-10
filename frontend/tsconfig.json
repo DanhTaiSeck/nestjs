@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "es2020",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"jsx": "react-jsx",
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"strict": true,
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"strictNullChecks": false,
+		"esModuleInterop": true,
+		"sourceMap": true,
+		"declaration": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+
+		"baseUrl": ".",
+		"types": ["vite/client", "node"],
+		"paths": {
+			"@/*": ["./src/*", "./dist/*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/types/svg.d.ts"],
+	"exclude": ["node_modules", "dist"]
+}
